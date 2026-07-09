@@ -1,0 +1,11 @@
+{
+  "name": "usage",
+  "displayName": "Claude Usage Dashboard",
+  "description": "Track Claude Code token usage & cost across your projects — publishes a live dashboard Artifact; --deep analyzes prompts and suggests improvements.",
+  "version": "1.0.0",
+  "author": { "name": "vimmiso" },
+  "homepage": "https://github.com/vimmiso/claude-usage-plugin",
+  "repository": "https://github.com/vimmiso/claude-usage-plugin",
+  "license": "MIT",
+  "keywords": ["usage", "tokens", "cost", "dashboard", "prompt-efficiency"]
+}
