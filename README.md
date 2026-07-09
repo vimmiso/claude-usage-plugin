@@ -45,6 +45,17 @@ On every run the dashboard redeploys to the **same URL** (stored in `~/.claude/c
 - Node.js 18+
 - Artifact tool available for hosted publishing (optional — falls back to a local HTML file)
 
+## Security — about the install warning
+
+When you add a marketplace or install any community plugin, Claude Code shows a standard trust warning ("plugins can execute code on your machine…"). **This warning appears for every third-party plugin, from every author — it is not specific to this one.** Anthropic applies a blanket trust model and offers no verification badge, so the way to trust a plugin is to check what's inside it. This plugin is easy to audit:
+
+- **No hooks** — nothing runs automatically in the background or on session events; code executes only when *you* type `/usage:dash`
+- **No MCP servers, no `bin/` executables, no npm dependencies** — the entire plugin is two Markdown files and one ~600-line Node script using only built-in modules
+- **No network access** — the script reads local files (`~/.claude/projects`) and writes local files; it never makes a network request
+- **Normal permission flow still applies** — even when invoked, Claude Code asks for your permission before running the script, like any other command
+
+You can read the full source in this repo before installing — [`skills/usage/scripts/analyze-usage.mjs`](skills/usage/scripts/analyze-usage.mjs) is the only executable code.
+
 ## Privacy
 
 All parsing happens on your machine. Nothing is sent anywhere except the rendered dashboard HTML, which is published as a **private-by-default** Claude Artifact only when you run the command. Deep-mode findings quote short anonymized prompt excerpts — review the dashboard before sharing the link.
