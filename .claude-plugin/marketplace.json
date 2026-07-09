@@ -1,0 +1,12 @@
+{
+  "name": "claude-usage",
+  "owner": { "name": "vimmiso" },
+  "description": "Claude Code usage & cost dashboard with prompt-efficiency analysis",
+  "plugins": [
+    {
+      "name": "usage",
+      "source": "./",
+      "description": "Token usage & cost dashboard published as a hosted Artifact; --deep analyzes your prompts and suggests improvements."
+    }
+  ]
+}
